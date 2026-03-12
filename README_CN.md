@@ -2,7 +2,7 @@
 
 **DeepDiagram AI** 是一个开源的智能可视化平台，利用 **Agentic AI（智能体 AI）** 和**多智能体编排技术**，将自然语言和多模态输入转换为专业图表。与传统工具不同，DeepDiagram 采用了基于 **LangGraph 的架构**，由专门的智能体处理不同的可视化领域——从交互式思维导图到复杂的信息图表。
 
-**项目体验地址: [http://deepd.cturing.cn/](http://deepd.cturing.cn/)**
+**项目体验地址: [https://20190601.xyz/](https://20190601.xyz/)**
 
 ![DeepDiagram AI Demo](./images/20251222-152234.gif)
 
@@ -369,6 +369,6 @@ MODEL_ID=your-model-name
 
 - **问题反馈**: [GitHub Issues](https://github.com/twwch/DeepDiagram/issues)
 - **讨论交流**: [GitHub Discussions](https://github.com/twwch/DeepDiagram/discussions)
-- **在线体验**: [http://deepd.cturing.cn/](http://deepd.cturing.cn/)
+- **在线体验**: [https://20190601.xyz/](https://20190601.xyz/)
 
 Made with ❤️ by the DeepDiagram Team
