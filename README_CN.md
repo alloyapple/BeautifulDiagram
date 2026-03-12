@@ -1,18 +1,18 @@
-# DeepDiagram AI: 智能 AI 可视化平台
+# BeautifulDiagram AI: 智能 AI 可视化平台
 
-**DeepDiagram AI** 是一个开源的智能可视化平台，利用 **Agentic AI（智能体 AI）** 和**多智能体编排技术**，将自然语言和多模态输入转换为专业图表。与传统工具不同，DeepDiagram 采用了基于 **LangGraph 的架构**，由专门的智能体处理不同的可视化领域——从交互式思维导图到复杂的信息图表。
+**BeautifulDiagram AI** 是一个开源的智能可视化平台，利用 **Agentic AI（智能体 AI）** 和**多智能体编排技术**，将自然语言和多模态输入转换为专业图表。与传统工具不同，BeautifulDiagram 采用了基于 **LangGraph 的架构**，由专门的智能体处理不同的可视化领域——从交互式思维导图到复杂的信息图表。
 
 **项目体验地址: [https://20190601.xyz/](https://20190601.xyz/)**
 
-![DeepDiagram AI Demo](./images/20251222-152234.gif)
+![BeautifulDiagram AI Demo](./images/20251222-152234.gif)
 
-![DeepDiagram AI Demo1](./images/20251225-170102.gif)
+![BeautifulDiagram AI Demo1](./images/20251225-170102.gif)
 
-![DeepDiagram AI Demo2](./images/20260104-093043.gif)
+![BeautifulDiagram AI Demo2](./images/20260104-093043.gif)
 
-![DeepDiagram AI Demo3](./images/20260104-093302.gif)
+![BeautifulDiagram AI Demo3](./images/20260104-093302.gif)
 
-![DeepDiagram AI Demo4](./images/20260104-093459.gif)
+![BeautifulDiagram AI Demo4](./images/20260104-093459.gif)
 
 ---
 
@@ -118,7 +118,7 @@
 
 ## 🏗 系统架构
 
-DeepDiagram AI 使用 **React 19 + FastAPI** 架构，由 **LangGraph** 进行编排。每个专业智能体直接输出包含 XML 风格的 `<design_concept>` 和 `<code>` 标签的结构化内容，通过 **SSE（服务器推送事件）** 流式传输到前端，实现实时预览体验。
+BeautifulDiagram AI 使用 **React 19 + FastAPI** 架构，由 **LangGraph** 进行编排。每个专业智能体直接输出包含 XML 风格的 `<design_concept>` 和 `<code>` 标签的结构化内容，通过 **SSE（服务器推送事件）** 流式传输到前端，实现实时预览体验。
 
 ```mermaid
 graph TD
@@ -254,7 +254,7 @@ DEEPSEEK_API_KEY=sk-your-deepseek-key
 DEEPSEEK_BASE_URL=https://api.deepseek.com
 
 # 数据库（Docker Compose 自动配置）
-DATABASE_URL=postgresql+asyncpg://postgres:postgres@db:5432/deepdiagram
+DATABASE_URL=postgresql+asyncpg://postgres:postgres@db:5432/beautifuldiagram
 
 # 可选: 思维过程详细程度（concise/normal/verbose）
 THINKING_VERBOSITY=normal
@@ -278,7 +278,7 @@ docker-compose logs -f backend  # 查看后端日志
 
 ### 方案 3: 自定义 LLM 提供商
 
-DeepDiagram 支持任何 OpenAI 兼容的 API 端点。通过 `.env` 配置：
+BeautifulDiagram 支持任何 OpenAI 兼容的 API 端点。通过 `.env` 配置：
 ```env
 OPENAI_BASE_URL=https://your-custom-endpoint.com/v1
 OPENAI_API_KEY=your-api-key
@@ -349,7 +349,7 @@ MODEL_ID=your-model-name
 
 ## ⭐ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=twwch/DeepDiagram&type=date&legend=top-left)](https://www.star-history.com/#twwch/DeepDiagram&type=date&legend=top-left)
+[![Star History Chart](https://api.star-history.com/svg?repos=twwch/BeautifulDiagram&type=date&legend=top-left)](https://www.star-history.com/#twwch/BeautifulDiagram&type=date&legend=top-left)
 
 ---
 
@@ -367,8 +367,8 @@ MODEL_ID=your-model-name
 
 ## 📞 支持与社区
 
-- **问题反馈**: [GitHub Issues](https://github.com/twwch/DeepDiagram/issues)
-- **讨论交流**: [GitHub Discussions](https://github.com/twwch/DeepDiagram/discussions)
+- **问题反馈**: [GitHub Issues](https://github.com/twwch/BeautifulDiagram/issues)
+- **讨论交流**: [GitHub Discussions](https://github.com/twwch/BeautifulDiagram/discussions)
 - **在线体验**: [https://20190601.xyz/](https://20190601.xyz/)
 
-Made with ❤️ by the DeepDiagram Team
+Made with ❤️ by the BeautifulDiagram Team

@@ -3,20 +3,20 @@ version: '3.8'
 services:
   db:
     image: postgres:16-alpine
-    container_name: deepdiagram-db
+    container_name: beautifuldiagram-db
     restart: always
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres_password
-      POSTGRES_DB: deepdiagram
+      POSTGRES_DB: beautifuldiagram
     ports:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
 
   backend:
-    image: twwch/deepdiagram-backend:latest
-    container_name: deepdiagram-backend
+    image: twwch/beautifuldiagram-backend:latest
+    container_name: beautifuldiagram-backend
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -24,7 +24,7 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgresql+asyncpg://postgres:postgres_password@db:5432/deepdiagram
+      - DATABASE_URL=postgresql+asyncpg://postgres:postgres_password@db:5432/beautifuldiagram
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - OPENAI_BASE_URL=${OPENAI_BASE_URL}
       - MODEL_ID=${MODEL_ID}
@@ -35,8 +35,8 @@ services:
       - "8000:8000"
 
   frontend:
-    image: twwch/deepdiagram-frontend:latest
-    container_name: deepdiagram-frontend
+    image: twwch/beautifuldiagram-frontend:latest
+    container_name: beautifuldiagram-frontend
     build:
       context: ./frontend
       dockerfile: Dockerfile
@@ -47,8 +47,8 @@ services:
       - "80:80"
 
   website:
-    image: twwch/deepdiagram-website:latest
-    container_name: deepdiagram-website
+    image: twwch/beautifuldiagram-website:latest
+    container_name: beautifuldiagram-website
     build:
       context: ./website
       dockerfile: Dockerfile

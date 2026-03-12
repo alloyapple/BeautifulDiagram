@@ -67,7 +67,7 @@ export const CanvasPanel = () => {
         const lastAssistantIdx = [...messages].reverse().findIndex(m => m.role === 'assistant');
         if (lastAssistantIdx !== -1) {
             const actualIdx = messages.length - 1 - lastAssistantIdx;
-            window.dispatchEvent(new CustomEvent('deepdiagram-retry', { detail: { index: actualIdx } }));
+            window.dispatchEvent(new CustomEvent('beautifuldiagram-retry', { detail: { index: actualIdx } }));
         }
     };
 

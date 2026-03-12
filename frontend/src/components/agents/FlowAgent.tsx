@@ -251,7 +251,7 @@ export const FlowAgent = forwardRef<AgentRef, AgentProps>(({ content }, ref) => 
             const flowElement = document.querySelector('.react-flow__viewport') as HTMLElement;
             if (!flowElement) return;
 
-            const filename = `deepdiagram-flowchart-${new Date().getTime()}`;
+            const filename = `beautifuldiagram-flowchart-${new Date().getTime()}`;
             const downloadFile = (url: string, ext: string) => {
                 const a = document.createElement('a');
                 a.href = url;
@@ -426,7 +426,7 @@ export const FlowAgent = forwardRef<AgentRef, AgentProps>(({ content }, ref) => 
                     <p className="text-sm font-semibold text-slate-800">Flowchart Render Failed</p>
                     <p className="text-xs text-slate-500 mt-1 mb-4 max-w-xs">{error}</p>
                     <button
-                        onClick={() => window.dispatchEvent(new CustomEvent('deepdiagram-retry', {
+                        onClick={() => window.dispatchEvent(new CustomEvent('beautifuldiagram-retry', {
                             detail: {
                                 index: useChatStore.getState().messages.length - 1,
                                 error: error

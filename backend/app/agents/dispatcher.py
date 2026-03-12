@@ -85,7 +85,7 @@ async def router_node(state: AgentState):
 
     descriptions_text = "\n".join([f"- '{key}': {desc}" for key, desc in agent_descriptions.items()])
 
-    system_prompt = f"""You are an intelligent DeepDiagram Router.
+    system_prompt = f"""You are an intelligent BeautifulDiagram Router.
     Your goal is to analyze the user's intent and route to the most appropriate diagram agent.
     
     AGENT EXECUTION HISTORY (Agents + Tools): 

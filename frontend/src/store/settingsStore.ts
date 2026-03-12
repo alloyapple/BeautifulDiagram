@@ -44,7 +44,7 @@ export const useSettingsStore = create<SettingsState>()(
             setHasShownRecommendation: (shown) => set({ hasShownRecommendation: shown }),
         }),
         {
-            name: 'deepdiagram-settings-v2', // Version bump for schema change
+            name: 'beautifuldiagram-settings-v2', // Version bump for schema change
         }
     )
 );

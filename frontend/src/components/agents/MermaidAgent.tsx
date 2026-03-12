@@ -271,7 +271,7 @@ export const MermaidAgent = forwardRef<AgentRef, AgentProps>(({ content }, ref) 
                     <p className="text-sm font-semibold text-slate-800">Mermaid Render Failed</p>
                     <p className="text-xs text-slate-500 mt-1 mb-4 max-w-xs">{error}</p>
                     <button
-                        onClick={() => window.dispatchEvent(new CustomEvent('deepdiagram-retry', {
+                        onClick={() => window.dispatchEvent(new CustomEvent('beautifuldiagram-retry', {
                             detail: {
                                 index: useChatStore.getState().messages.length - 1,
                                 error: error

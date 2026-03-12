@@ -12,7 +12,7 @@ const categoryLabels: Record<string, { zh: string; en: string }> = {
 
 export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl;
-  const title = searchParams.get('title') || 'DeepDiagram AI';
+  const title = searchParams.get('title') || 'BeautifulDiagram AI';
   const category = searchParams.get('category') || '';
   const locale = searchParams.get('locale') || 'zh';
   const date = searchParams.get('date') || '';
@@ -53,7 +53,7 @@ export async function GET(request: NextRequest) {
               D
             </div>
             <span style={{ fontSize: '26px', fontWeight: 700, color: 'rgba(255,255,255,0.9)' }}>
-              DeepDiagram
+              BeautifulDiagram
             </span>
           </div>
           {categoryLabel && (
@@ -106,7 +106,7 @@ export async function GET(request: NextRequest) {
           }}
         >
           <span style={{ fontSize: '20px', color: 'rgba(255,255,255,0.7)' }}>
-            {date || 'deepdiagram.ai'}
+            {date || 'beautifuldiagram.ai'}
           </span>
           <span style={{ fontSize: '20px', color: 'rgba(255,255,255,0.6)' }}>
             cturing.cn

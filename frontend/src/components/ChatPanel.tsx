@@ -358,8 +358,8 @@ export const ChatPanel = () => {
                 handleRetry(index, error);
             }
         };
-        window.addEventListener('deepdiagram-retry', handler);
-        return () => window.removeEventListener('deepdiagram-retry', handler);
+        window.addEventListener('beautifuldiagram-retry', handler);
+        return () => window.removeEventListener('beautifuldiagram-retry', handler);
     }, [messages, isLoading]);
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -961,10 +961,10 @@ export const ChatPanel = () => {
                 <div>
                     <div className="flex items-center gap-2">
                         <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                            DeepDiagram AI
+                            BeautifulDiagram AI
                         </h1>
                         <a
-                            href="https://github.com/twwch/DeepDiagram"
+                            href="https://github.com/twwch/BeautifulDiagram"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="p-1 rounded-full hover:bg-slate-100 text-slate-950 transition-colors"
@@ -1190,7 +1190,7 @@ export const ChatPanel = () => {
                         </div>
 
                         <div className="text-[10px] font-bold text-slate-300 uppercase tracking-[0.2em] animate-pulse">
-                            Powered by DeepDiagram Advanced Orchestration
+                            Powered by BeautifulDiagram Advanced Orchestration
                         </div>
                     </div>
                 )}

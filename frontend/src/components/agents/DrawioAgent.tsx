@@ -63,7 +63,7 @@ export const DrawioAgent = forwardRef<AgentRef, AgentProps>(({ content }, ref) =
                     const downloadFile = (url: string, ext: string) => {
                         const a = document.createElement('a');
                         a.href = url;
-                        a.download = `deepdiagram-drawio-${new Date().getTime()}.${ext}`;
+                        a.download = `beautifuldiagram-drawio-${new Date().getTime()}.${ext}`;
                         a.click();
                     };
                     downloadFile(msg.data, msg.format === 'xmlsvg' || msg.format === 'svg' ? 'svg' : 'png');

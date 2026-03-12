@@ -6,7 +6,7 @@ export function websiteJsonLd() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'DeepDiagram AI',
+    name: 'BeautifulDiagram AI',
     url: SITE_URL,
     description: 'AI-powered intelligent visualization platform',
   };
@@ -16,10 +16,10 @@ export function organizationJsonLd() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'DeepDiagram',
+    name: 'BeautifulDiagram',
     url: SITE_URL,
     logo: `${SITE_URL}/images/logo.png`,
-    sameAs: ['https://github.com/chen-yingfa/DeepDiagram'],
+    sameAs: ['https://github.com/chen-yingfa/BeautifulDiagram'],
   };
 }
 
@@ -33,12 +33,12 @@ export function blogPostJsonLd(post: BlogPost) {
     datePublished: post.frontmatter.date,
     author: {
       '@type': 'Organization',
-      name: 'DeepDiagram Team',
+      name: 'BeautifulDiagram Team',
       url: SITE_URL,
     },
     publisher: {
       '@type': 'Organization',
-      name: 'DeepDiagram AI',
+      name: 'BeautifulDiagram AI',
       logo: { '@type': 'ImageObject', url: `${SITE_URL}/images/logo.png` },
     },
     mainEntityOfPage: {
@@ -53,7 +53,7 @@ export function softwareJsonLd() {
   return {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: 'DeepDiagram',
+    name: 'BeautifulDiagram',
     applicationCategory: 'DesignApplication',
     operatingSystem: 'Web',
     offers: {

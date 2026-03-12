@@ -1,18 +1,18 @@
-# DeepDiagram AI: Agentic AI Visualization Platform
+# BeautifulDiagram AI: Agentic AI Visualization Platform
 
-**DeepDiagram AI** is an open-source, intelligent visualization platform that leverages **Agentic AI** and **multi-agent orchestration** to transform natural language and multimodal inputs into professional diagrams. Unlike traditional tools, DeepDiagram employs a **LangGraph-powered architecture** where specialized agents handle different visualization domains—from interactive mind maps to complex infographics.
+**BeautifulDiagram AI** is an open-source, intelligent visualization platform that leverages **Agentic AI** and **multi-agent orchestration** to transform natural language and multimodal inputs into professional diagrams. Unlike traditional tools, BeautifulDiagram employs a **LangGraph-powered architecture** where specialized agents handle different visualization domains—from interactive mind maps to complex infographics.
 
 **Demo: [https://20190601.xyz/](https://20190601.xyz/)**
 
-![DeepDiagram AI Demo](./images/20251222-152234.gif)
+![BeautifulDiagram AI Demo](./images/20251222-152234.gif)
 
-![DeepDiagram AI Demo1](./images/20251225-170102.gif)
+![BeautifulDiagram AI Demo1](./images/20251225-170102.gif)
 
-![DeepDiagram AI Demo2](./images/20260104-093043.gif)
+![BeautifulDiagram AI Demo2](./images/20260104-093043.gif)
 
-![DeepDiagram AI Demo3](./images/20260104-093302.gif)
+![BeautifulDiagram AI Demo3](./images/20260104-093302.gif)
 
-![DeepDiagram AI Demo4](./images/20260104-093459.gif)
+![BeautifulDiagram AI Demo4](./images/20260104-093459.gif)
 
 ---
 
@@ -118,7 +118,7 @@
 
 ## 🏗 System Architecture
 
-DeepDiagram AI uses a **React 19 + FastAPI** architecture, orchestrated by **LangGraph**. Each specialized agent directly outputs structured content with XML-style `<design_concept>` and `<code>` tags, streamed to the frontend via **SSE (Server-Sent Events)** for real-time preview.
+BeautifulDiagram AI uses a **React 19 + FastAPI** architecture, orchestrated by **LangGraph**. Each specialized agent directly outputs structured content with XML-style `<design_concept>` and `<code>` tags, streamed to the frontend via **SSE (Server-Sent Events)** for real-time preview.
 
 ```mermaid
 graph TD
@@ -254,7 +254,7 @@ DEEPSEEK_API_KEY=sk-your-deepseek-key
 DEEPSEEK_BASE_URL=https://api.deepseek.com
 
 # Database (auto-configured in Docker Compose)
-DATABASE_URL=postgresql+asyncpg://postgres:postgres@db:5432/deepdiagram
+DATABASE_URL=postgresql+asyncpg://postgres:postgres@db:5432/beautifuldiagram
 
 # Optional: Thinking verbosity (concise/normal/verbose)
 THINKING_VERBOSITY=normal
@@ -278,7 +278,7 @@ docker-compose logs -f backend  # View backend logs
 
 ### Option 3: Custom LLM Provider
 
-DeepDiagram supports any OpenAI-compatible API endpoint. Configure via `.env`:
+BeautifulDiagram supports any OpenAI-compatible API endpoint. Configure via `.env`:
 ```env
 OPENAI_BASE_URL=https://your-custom-endpoint.com/v1
 OPENAI_API_KEY=your-api-key
@@ -349,7 +349,7 @@ Contributions are welcome! Please follow these guidelines:
 
 ## ⭐ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=twwch/DeepDiagram&type=date&legend=top-left)](https://www.star-history.com/#twwch/DeepDiagram&type=date&legend=top-left)
+[![Star History Chart](https://api.star-history.com/svg?repos=twwch/BeautifulDiagram&type=date&legend=top-left)](https://www.star-history.com/#twwch/BeautifulDiagram&type=date&legend=top-left)
 
 ---
 
@@ -367,8 +367,8 @@ Key points:
 
 ## 📞 Support & Community
 
-- **Issues**: [GitHub Issues](https://github.com/twwch/DeepDiagram/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/twwch/DeepDiagram/discussions)
+- **Issues**: [GitHub Issues](https://github.com/twwch/BeautifulDiagram/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/twwch/BeautifulDiagram/discussions)
 - **Demo**: [https://20190601.xyz/](https://20190601.xyz/)
 
-Made with ❤️ by the DeepDiagram Team
+Made with ❤️ by the BeautifulDiagram Team

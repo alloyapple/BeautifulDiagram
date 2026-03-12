@@ -6,12 +6,12 @@ order: 2
 
 ## Architecture Overview
 
-DeepDiagram production environment consists of the following services:
+BeautifulDiagram production environment consists of the following services:
 
 | Service | Tech Stack | Image |
 |---------|-----------|-------|
-| **Frontend** | React 19 + Nginx | `twwch/deepdiagram-frontend:latest` |
-| **Backend** | FastAPI + LangGraph | `twwch/deepdiagram-backend:latest` |
+| **Frontend** | React 19 + Nginx | `twwch/beautifuldiagram-frontend:latest` |
+| **Backend** | FastAPI + LangGraph | `twwch/beautifuldiagram-backend:latest` |
 | **Database** | PostgreSQL 16 | `postgres:16-alpine` |
 
 ## Docker Compose Deployment
@@ -19,7 +19,7 @@ DeepDiagram production environment consists of the following services:
 ### 1. Create Project Directory
 
 ```bash
-mkdir deepdiagram && cd deepdiagram
+mkdir beautifuldiagram && cd beautifuldiagram
 ```
 
 ### 2. Create docker-compose.yml
@@ -30,25 +30,25 @@ version: '3.8'
 services:
   db:
     image: postgres:16-alpine
-    container_name: deepdiagram-db
+    container_name: beautifuldiagram-db
     restart: always
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: your_secure_password
-      POSTGRES_DB: deepdiagram
+      POSTGRES_DB: beautifuldiagram
     ports:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
 
   backend:
-    image: twwch/deepdiagram-backend:latest
-    container_name: deepdiagram-backend
+    image: twwch/beautifuldiagram-backend:latest
+    container_name: beautifuldiagram-backend
     restart: always
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgresql+asyncpg://postgres:your_secure_password@db:5432/deepdiagram
+      - DATABASE_URL=postgresql+asyncpg://postgres:your_secure_password@db:5432/beautifuldiagram
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - OPENAI_BASE_URL=${OPENAI_BASE_URL}
       - MODEL_ID=${MODEL_ID}
@@ -58,8 +58,8 @@ services:
       - "8000:8000"
 
   frontend:
-    image: twwch/deepdiagram-frontend:latest
-    container_name: deepdiagram-frontend
+    image: twwch/beautifuldiagram-frontend:latest
+    container_name: beautifuldiagram-frontend
     restart: always
     depends_on:
       - backend
@@ -164,13 +164,13 @@ PostgreSQL data is persisted via the Docker Volume `pgdata`.
 ### Backup Database
 
 ```bash
-docker exec deepdiagram-db pg_dump -U postgres deepdiagram > backup.sql
+docker exec beautifuldiagram-db pg_dump -U postgres beautifuldiagram > backup.sql
 ```
 
 ### Restore Database
 
 ```bash
-cat backup.sql | docker exec -i deepdiagram-db psql -U postgres deepdiagram
+cat backup.sql | docker exec -i beautifuldiagram-db psql -U postgres beautifuldiagram
 ```
 
 ## Update Version
@@ -188,8 +188,8 @@ docker compose up -d
 If you need a custom build:
 
 ```bash
-git clone https://github.com/twwch/DeepDiagram.git
-cd DeepDiagram
+git clone https://github.com/twwch/BeautifulDiagram.git
+cd BeautifulDiagram
 docker compose up -d --build
 ```
 

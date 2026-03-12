@@ -1,4 +1,4 @@
-# DeepDiagram 官网架构方案
+# BeautifulDiagram 官网架构方案
 
 > 基于 Next.js 全新构建，以 SEO 为核心目标的官方网站。
 

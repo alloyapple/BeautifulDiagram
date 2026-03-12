@@ -1,4 +1,4 @@
-# DeepDiagram AI - Project Knowledge Base
+# BeautifulDiagram AI - Project Knowledge Base
 
 **Generated:** 2026-03-12
 **Commit:** 83cd1a8

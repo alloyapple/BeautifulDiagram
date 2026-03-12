@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Settings:
-    PROJECT_NAME: str = "DeepDiagram"
+    PROJECT_NAME: str = "BeautifulDiagram"
     API_V1_STR: str = "/api/v1"
     # CORS
     BACKEND_CORS_ORIGINS: list[str] = ["http://localhost:5173", "http://localhost:3000", "*"]
@@ -17,7 +17,7 @@ class Settings:
     LANGCHAIN_API_KEY: str = os.getenv("LANGCHAIN_API_KEY", "")
     
     # DATABASE
-    DATABASE_URL: str = os.getenv("DATABASE_URL", "postgresql+asyncpg://postgres:postgres@localhost:5432/deepdiagram")
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "postgresql+asyncpg://postgres:postgres@localhost:5432/beautifuldiagram")
 
     MAX_TOKENS: int = int(os.getenv("MAX_TOKENS", 1024*16))
 

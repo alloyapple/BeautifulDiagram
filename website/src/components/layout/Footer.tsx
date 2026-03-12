@@ -29,14 +29,14 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-2 sm:col-span-1">
             <div className="flex items-center gap-2.5">
-              <img src="/logo.png" alt="DeepDiagram" className="h-8 w-8 rounded-lg" width={32} height={32} />
-              <span className="text-lg font-semibold text-gray-900">DeepDiagram</span>
+              <img src="/logo.png" alt="BeautifulDiagram" className="h-8 w-8 rounded-lg" width={32} height={32} />
+              <span className="text-lg font-semibold text-gray-900">BeautifulDiagram</span>
             </div>
             <p className="mt-3 text-sm leading-relaxed text-gray-500">
               {t('description')}
             </p>
             <a
-              href="https://github.com/twwch/DeepDiagram"
+              href="https://github.com/twwch/BeautifulDiagram"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 inline-flex items-center gap-2 text-sm text-gray-500 hover:text-gray-700"

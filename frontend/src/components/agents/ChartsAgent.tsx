@@ -19,7 +19,7 @@ export const ChartsAgent = forwardRef<AgentRef, AgentProps>(({ content }, ref) =
     useImperativeHandle(ref, () => ({
         handleDownload: async (type: 'png' | 'svg') => {
             if (!chartInstanceRef.current) return;
-            const filename = `deepdiagram - charts - ${new Date().getTime()} `;
+            const filename = `beautifuldiagram - charts - ${new Date().getTime()} `;
 
             const downloadFile = (url: string, ext: string) => {
                 const a = document.createElement('a');
@@ -167,7 +167,7 @@ export const ChartsAgent = forwardRef<AgentRef, AgentProps>(({ content }, ref) =
                     <p className="text-base font-semibold text-slate-800 mb-2">Chart Render Failed</p>
                     <p className="text-sm text-slate-600 mb-6">{error}</p>
                     <button
-                        onClick={() => window.dispatchEvent(new CustomEvent('deepdiagram-retry', {
+                        onClick={() => window.dispatchEvent(new CustomEvent('beautifuldiagram-retry', {
                             detail: {
                                 index: useChatStore.getState().messages.length - 1,
                                 error: error

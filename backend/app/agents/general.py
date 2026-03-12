@@ -5,7 +5,7 @@ from app.core.llm import get_llm, get_configured_llm
 async def general_agent_node(state: AgentState):
     messages = state['messages']
     
-    system_prompt = SystemMessage(content="""You are DeepDiagram, a helpful AI assistant specialized in creating diagrams.
+    system_prompt = SystemMessage(content="""You are BeautifulDiagram, a helpful AI assistant specialized in creating diagrams.
     
     Your capabilities:
     1. Mindmaps (using Markmap/Markdown)

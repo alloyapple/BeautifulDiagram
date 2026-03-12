@@ -28,8 +28,8 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5">
-            <img src="/logo.png" alt="DeepDiagram" className="h-8 w-8 rounded-lg" width={32} height={32} />
-            <span className="text-lg font-semibold text-gray-900">DeepDiagram</span>
+            <img src="/logo.png" alt="BeautifulDiagram" className="h-8 w-8 rounded-lg" width={32} height={32} />
+            <span className="text-lg font-semibold text-gray-900">BeautifulDiagram</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -48,7 +48,7 @@ export function Header() {
           {/* Desktop Actions */}
           <div className="hidden items-center gap-3 md:flex">
             <LocaleSwitcher />
-            <Button href="https://github.com/twwch/DeepDiagram" external variant="ghost" size="sm">
+            <Button href="https://github.com/twwch/BeautifulDiagram" external variant="ghost" size="sm">
               <Github className="h-4 w-4" />
               {tc('viewOnGitHub')}
             </Button>

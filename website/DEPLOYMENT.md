@@ -1,4 +1,4 @@
-# DeepDiagram 官网部署文档
+# BeautifulDiagram 官网部署文档
 
 ## 架构
 
@@ -6,18 +6,18 @@
 
 | 服务 | 路径 | 技术栈 | 端口 | 镜像 |
 |------|------|--------|------|------|
-| **官网** | `/` | Next.js 15 (standalone) | 3000 | `twwch/deepdiagram-website:latest` |
-| **产品应用** | `/app` | React 19 + Nginx | 80 | `twwch/deepdiagram-frontend:latest` |
-| **后端 API** | `/api` | FastAPI + LangGraph | 8000 | `twwch/deepdiagram-backend:latest` |
+| **官网** | `/` | Next.js 15 (standalone) | 3000 | `twwch/beautifuldiagram-website:latest` |
+| **产品应用** | `/app` | React 19 + Nginx | 80 | `twwch/beautifuldiagram-frontend:latest` |
+| **后端 API** | `/api` | FastAPI + LangGraph | 8000 | `twwch/beautifuldiagram-backend:latest` |
 | **数据库** | — | PostgreSQL 16 | 5432 | `postgres:16-alpine` |
 
 ## CI/CD
 
 推送到 `main` 分支或打 `v*` tag 时，GitHub Actions 会自动构建并推送 Docker 镜像到 Docker Hub：
 
-- `twwch/deepdiagram-website:latest`
-- `twwch/deepdiagram-frontend:latest`
-- `twwch/deepdiagram-backend:latest`
+- `twwch/beautifuldiagram-website:latest`
+- `twwch/beautifuldiagram-frontend:latest`
+- `twwch/beautifuldiagram-backend:latest`
 
 配置文件：`.github/workflows/docker-build-push.yml`
 
@@ -52,8 +52,8 @@ docker compose logs -f website
 
 ```bash
 cd website
-docker build -t twwch/deepdiagram-website:latest .
-docker run -d -p 3000:3000 --name deepdiagram-website twwch/deepdiagram-website:latest
+docker build -t twwch/beautifuldiagram-website:latest .
+docker run -d -p 3000:3000 --name beautifuldiagram-website twwch/beautifuldiagram-website:latest
 ```
 
 ## Nginx 网关配置

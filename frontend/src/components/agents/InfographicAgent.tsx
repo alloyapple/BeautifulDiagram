@@ -143,7 +143,7 @@ export const InfographicAgent = forwardRef<AgentRef, AgentProps>(({ content }, r
     useImperativeHandle(ref, () => ({
         handleDownload: async (type: 'png' | 'svg') => {
             if (!infographicRef.current) return;
-            const filename = `deepdiagram-infographic-${new Date().getTime()}`;
+            const filename = `beautifuldiagram-infographic-${new Date().getTime()}`;
 
             try {
                 if (type === 'svg') {
@@ -246,7 +246,7 @@ export const InfographicAgent = forwardRef<AgentRef, AgentProps>(({ content }, r
                     <p className="text-base font-semibold text-slate-800 mb-2">Infographic Render Failed</p>
                     <p className="text-sm text-slate-600 mb-6">{error}</p>
                     <button
-                        onClick={() => window.dispatchEvent(new CustomEvent('deepdiagram-retry', {
+                        onClick={() => window.dispatchEvent(new CustomEvent('beautifuldiagram-retry', {
                             detail: {
                                 index: useChatStore.getState().messages.length - 1,
                                 error: error

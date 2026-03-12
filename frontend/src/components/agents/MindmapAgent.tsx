@@ -157,7 +157,7 @@ export const MindmapAgent = forwardRef<AgentRef, AgentProps>(({ content }, ref) 
     useImperativeHandle(ref, () => ({
         handleDownload: async (type: 'png' | 'svg') => {
             if (!mindmapInstanceRef.current) return;
-            const filename = `deepdiagram-mindmap-${new Date().getTime()}`;
+            const filename = `beautifuldiagram-mindmap-${new Date().getTime()}`;
 
             const downloadFile = (url: string, ext: string) => {
                 const a = document.createElement('a');
@@ -263,7 +263,7 @@ export const MindmapAgent = forwardRef<AgentRef, AgentProps>(({ content }, ref) 
                     <p className="text-sm font-semibold text-slate-800">Mindmap Render Failed</p>
                     <p className="text-xs text-slate-500 mt-1 mb-4 max-w-xs">{error}</p>
                     <button
-                        onClick={() => window.dispatchEvent(new CustomEvent('deepdiagram-retry', {
+                        onClick={() => window.dispatchEvent(new CustomEvent('beautifuldiagram-retry', {
                             detail: { index: useChatStore.getState().messages.length - 1 }
                         }))}
                         className="px-4 py-2 bg-slate-900 text-white rounded-lg text-xs font-bold hover:bg-slate-800 transition-colors"

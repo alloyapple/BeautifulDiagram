@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 const SITE_URL = 'https://deepd.cturing.cn';
-const SITE_NAME = 'DeepDiagram AI';
+const SITE_NAME = 'BeautifulDiagram AI';
 
 export function createMetadata({
   title,
