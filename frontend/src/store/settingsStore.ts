@@ -1,6 +1,18 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
+// Fallback UUID generator for non-HTTPS environments
+const generateUUID = () => {
+    if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+        return crypto.randomUUID();
+    }
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+        const r = (Math.random() * 16) | 0;
+        const v = c === 'x' ? r : (r & 0x3) | 0x8;
+        return v.toString(16);
+    });
+};
+
 export interface ModelConfig {
     id: string;
     name: string;
@@ -27,7 +39,7 @@ export const useSettingsStore = create<SettingsState>()(
             activeModelId: null,
             hasShownRecommendation: false,
             addModel: (model) => set((state) => {
-                const id = crypto.randomUUID();
+                const id = generateUUID();
                 return {
                     models: [...state.models, { ...model, id }],
                     activeModelId: state.activeModelId || id
