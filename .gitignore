@@ -4,3 +4,6 @@ docker-compose-test.yml
 .DS_Store 
 
 video
+
+# Deployment scripts (local)
+deploy/
