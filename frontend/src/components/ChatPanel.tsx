@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import {
     Sparkles, ChevronDown, ChevronUp, Loader2, Workflow, Network,
     Code2, BarChart3, PenTool, Brain, Send, Paperclip, X, FileText,
-    Settings, Command, Square, Copy, Check, RotateCcw, Zap, Github,
+    Settings, Command, Square, Copy, Check, RotateCcw, Zap,
     Plus, History as HistoryIcon, MessageSquare, Trash2, AlertCircle,
     ChevronRight, ChevronLeft
 } from 'lucide-react';
