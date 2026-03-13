@@ -3,8 +3,8 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Section } from '@/components/ui/Section';
-import { Button } from '@/components/ui/Button';
-import { Github, Star } from 'lucide-react';
+import { Section } from '@/components/ui/Section';
+import { Star } from 'lucide-react';
 
 export function OpenSource() {
   const t = useTranslations('openSource');
@@ -26,12 +26,6 @@ export function OpenSource() {
         <p className="mx-auto mt-4 max-w-xl text-lg text-gray-400">
           {t('subtitle')}
         </p>
-        <div className="mt-8">
-          <Button href="https://github.com/twwch/BeautifulDiagram" external variant="secondary" size="lg">
-            <Github className="h-5 w-5" />
-            {t('cta')}
-          </Button>
-        </div>
       </motion.div>
     </Section>
   );

@@ -1,8 +1,8 @@
 import { setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { Section } from '@/components/ui/Section';
-import { Button } from '@/components/ui/Button';
-import { Github, Layers, Cpu, Database, Container as ContainerIcon } from 'lucide-react';
+
+import { Layers, Cpu, Database, Container as ContainerIcon } from 'lucide-react';
 import { createMetadata } from '@/lib/seo/metadata';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -59,12 +59,6 @@ function AboutContent() {
               </div>
             );
           })}
-        </div>
-        <div className="mt-12 text-center">
-          <Button href="https://github.com/twwch/BeautifulDiagram" external variant="secondary" size="lg">
-            <Github className="h-4 w-4" />
-            View on GitHub
-          </Button>
         </div>
       </Section>
     </>
