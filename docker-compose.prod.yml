@@ -13,8 +13,10 @@ services:
       - pgdata:/var/lib/postgresql/data
 
   backend:
-    image: beautifuldiagram-backend:latest
     container_name: beautifuldiagram-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     restart: always
     depends_on:
       - db
@@ -30,8 +32,10 @@ services:
       - "8000:8000"
 
   frontend:
-    image: beautifuldiagram-frontend:latest
     container_name: beautifuldiagram-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     restart: always
     depends_on:
       - backend
@@ -39,8 +43,10 @@ services:
       - "8888:80"
 
   website:
-    image: beautifuldiagram-website:latest
     container_name: beautifuldiagram-website
+    build:
+      context: ./website
+      dockerfile: Dockerfile
     restart: always
     ports:
       - "3000:3000"
