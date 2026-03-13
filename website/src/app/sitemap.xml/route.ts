@@ -1,6 +1,5 @@
 import { getAllPosts, getAllDocs } from '@/lib/mdx/content';
-
-const SITE_URL = 'https://deepd.cturing.cn';
+import { SITE_URL, SITE_CONFIG } from '@/lib/config';
 
 function escapeXml(str: string) {
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -10,8 +9,14 @@ function formatDate(date: Date) {
   return date.toISOString().split('T')[0];
 }
 
+function generateHreflangAlternates(path: string): string {
+  return SITE_CONFIG.locales
+    .map(locale => `    <xhtml:link rel="alternate" hreflang="${locale}" href="${SITE_URL}/${locale}${path}" />`)
+    .join('\n');
+}
+
 export function GET() {
-  const locales = ['zh', 'en'];
+  const locales = SITE_CONFIG.locales;
   const staticPages = ['', '/features', '/pricing', '/about', '/blog', '/docs', '/changelog'];
 
   const urls: string[] = [];
@@ -21,11 +26,13 @@ export function GET() {
     for (const page of staticPages) {
       const loc = `${SITE_URL}/${locale}${page}`;
       const priority = page === '' ? '1.0' : '0.8';
+      const hreflangs = generateHreflangAlternates(page);
       urls.push(`  <url>
     <loc>${escapeXml(loc)}</loc>
     <lastmod>${formatDate(new Date())}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${priority}</priority>
+${hreflangs}
   </url>`);
     }
   }
@@ -46,9 +53,9 @@ export function GET() {
 
   // Doc pages
   for (const locale of locales) {
-    const posts = getAllDocs(locale);
-    for (const post of posts) {
-      const loc = `${SITE_URL}/${locale}/docs/${post.slug}`;
+    const docs = getAllDocs(locale);
+    for (const doc of docs) {
+      const loc = `${SITE_URL}/${locale}/docs/${doc.slug}`;
       urls.push(`  <url>
     <loc>${escapeXml(loc)}</loc>
     <lastmod>${formatDate(new Date())}</lastmod>
@@ -59,7 +66,8 @@ export function GET() {
   }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${urls.join('\n')}
 </urlset>`;
 

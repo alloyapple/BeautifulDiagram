@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
+import { SITE_URL, SITE_CONFIG } from '@/lib/config';
 
-const SITE_URL = 'https://deepd.cturing.cn';
-const SITE_NAME = 'BeautifulDiagram AI';
+const SITE_NAME = SITE_CONFIG.name;
 
 export function createMetadata({
   title,

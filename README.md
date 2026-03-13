@@ -349,7 +349,7 @@ Contributions are welcome! Please follow these guidelines:
 
 ## ⭐ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=twwch/BeautifulDiagram&type=date&legend=top-left)](https://www.star-history.com/#twwch/BeautifulDiagram&type=date&legend=top-left)
+[![Star History Chart](https://api.star-history.com/svg?repos=alloyapple/BeautifulDiagram&type=date&legend=top-left)](https://www.star-history.com/#alloyapple/BeautifulDiagram&type=date&legend=top-left)
 
 ---
 
@@ -367,8 +367,8 @@ Key points:
 
 ## 📞 Support & Community
 
-- **Issues**: [GitHub Issues](https://github.com/twwch/BeautifulDiagram/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/twwch/BeautifulDiagram/discussions)
+- **Issues**: [GitHub Issues](https://github.com/alloyapple/BeautifulDiagram/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/alloyapple/BeautifulDiagram/discussions)
 - **Demo**: [https://20190601.xyz/](https://20190601.xyz/)
 
 Made with ❤️ by the BeautifulDiagram Team

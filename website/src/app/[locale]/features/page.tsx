@@ -7,9 +7,15 @@ import NextImage from 'next/image';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  const title = locale === 'zh' 
+    ? '功能特性 - AI图表生成工具对比 | BeautifulDiagram'
+    : 'Features - AI Diagram Tools Comparison | BeautifulDiagram';
+  const description = locale === 'zh'
+    ? '六大AI智能体：思维导图、流程图、数据图表、架构图、Mermaid、信息图。支持Excel导入，自然语言生成，实时预览。'
+    : 'Six AI agents: Mind maps, flowcharts, data charts, architecture diagrams, Mermaid, and infographics. Excel import, natural language generation, real-time preview.';
   return createMetadata({
-    title: locale === 'zh' ? '功能特性' : 'Features',
-    description: locale === 'zh' ? '探索 BeautifulDiagram 六大 AI 智能体的强大功能' : 'Explore the powerful capabilities of BeautifulDiagram\'s six AI agents',
+    title,
+    description,
     locale,
     path: '/features',
   });

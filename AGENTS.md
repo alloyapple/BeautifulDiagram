@@ -30,6 +30,7 @@ Agentic AI visualization platform. Multi-agent orchestration via LangGraph trans
 | State management             | `frontend/src/store/chatStore.ts`     | Zustand, message branching    |
 | Document parsing             | `backend/app/services/file_service.py`| PDF/DOCX/XLSX/PPTX            |
 | Session persistence          | `backend/app/services/chat.py`        | PostgreSQL, branching         |
+| Change domain/URLs           | `website/src/lib/config.ts`           | Centralized URL config        |
 
 ## KEY ARCHITECTURE
 
@@ -94,6 +95,7 @@ cd backend && alembic upgrade head
 2. **file_service.py** — Async coordination needs refactor
 3. **No automated tests** — Manual test scripts only
 4. **No CI linting** — Only Docker builds in GitHub Actions
+5. **Dual sitemaps** — `frontend/public/sitemap.xml` and `website/src/app/sitemap.xml/route.ts` must sync on domain changes
 
 ## NOTES
 
@@ -104,3 +106,4 @@ cd backend && alembic upgrade head
 ## DEPLOYMENT
 
 - **Ubuntu 18.04 (glibc 2.27)** requires Docker — Node.js 18+ and Python 3.13 packages need glibc 2.28+. Old kernels cause segfaults in rustup, uv venv, and source compilation of pymupdf.
+- **Docker images** use GitHub username prefix: `alloyapple/beautifuldiagram-{service}:latest`. Update deployment docs when changing ownership.

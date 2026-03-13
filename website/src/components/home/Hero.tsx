@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { Container } from '@/components/ui/Container';
 import { ArrowRight, Github, Sparkles } from 'lucide-react';
+import { APP_URL, SITE_CONFIG } from '@/lib/config';
 
 export function Hero() {
   const t = useTranslations('hero');
@@ -57,11 +58,11 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
-          <Button href="https://deepd.cturing.cn/app" external size="lg">
+          <Button href={APP_URL} external size="lg">
             {t('cta')}
             <ArrowRight className="h-4 w-4" />
           </Button>
-          <Button href="https://github.com/twwch/BeautifulDiagram" external variant="secondary" size="lg">
+          <Button href={SITE_CONFIG.github} external variant="secondary" size="lg">
             <Github className="h-4 w-4" />
             {t('secondaryCta')}
           </Button>
@@ -79,7 +80,7 @@ export function Hero() {
               <div className="h-3 w-3 rounded-full bg-red-500/80" />
               <div className="h-3 w-3 rounded-full bg-yellow-500/80" />
               <div className="h-3 w-3 rounded-full bg-green-500/80" />
-              <span className="ml-3 text-xs text-gray-400">deepd.cturing.cn/app</span>
+              <span className="ml-3 text-xs text-gray-400">20190601.xyz/app</span>
             </div>
             <video
               autoPlay

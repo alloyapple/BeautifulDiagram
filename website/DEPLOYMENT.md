@@ -2,22 +2,22 @@
 
 ## 架构
 
-官网作为独立的 Next.js 15 应用，与产品应用（React SPA）分开部署，共用同一域名 `deepd.cturing.cn`：
+官网作为独立的 Next.js 15 应用，与产品应用（React SPA）分开部署，共用同一域名 `20190601.xyz`：
 
 | 服务 | 路径 | 技术栈 | 端口 | 镜像 |
 |------|------|--------|------|------|
-| **官网** | `/` | Next.js 15 (standalone) | 3000 | `twwch/beautifuldiagram-website:latest` |
-| **产品应用** | `/app` | React 19 + Nginx | 80 | `twwch/beautifuldiagram-frontend:latest` |
-| **后端 API** | `/api` | FastAPI + LangGraph | 8000 | `twwch/beautifuldiagram-backend:latest` |
+| **官网** | `/` | Next.js 15 (standalone) | 3000 | `alloyapple/beautifuldiagram-website:latest` |
+| **产品应用** | `/app` | React 19 + Nginx | 80 | `alloyapple/beautifuldiagram-frontend:latest` |
+| **后端 API** | `/api` | FastAPI + LangGraph | 8000 | `alloyapple/beautifuldiagram-backend:latest` |
 | **数据库** | — | PostgreSQL 16 | 5432 | `postgres:16-alpine` |
 
 ## CI/CD
 
 推送到 `main` 分支或打 `v*` tag 时，GitHub Actions 会自动构建并推送 Docker 镜像到 Docker Hub：
 
-- `twwch/beautifuldiagram-website:latest`
-- `twwch/beautifuldiagram-frontend:latest`
-- `twwch/beautifuldiagram-backend:latest`
+- `alloyapple/beautifuldiagram-website:latest`
+- `alloyapple/beautifuldiagram-frontend:latest`
+- `alloyapple/beautifuldiagram-backend:latest`
 
 配置文件：`.github/workflows/docker-build-push.yml`
 
@@ -52,13 +52,13 @@ docker compose logs -f website
 
 ```bash
 cd website
-docker build -t twwch/beautifuldiagram-website:latest .
-docker run -d -p 3000:3000 --name beautifuldiagram-website twwch/beautifuldiagram-website:latest
+docker build -t alloyapple/beautifuldiagram-website:latest .
+docker run -d -p 3000:3000 --name beautifuldiagram-website alloyapple/beautifuldiagram-website:latest
 ```
 
 ## Nginx 网关配置
 
-所有服务通过 Nginx 网关按路径分流，统一入口为 `deepd.cturing.cn`：
+所有服务通过 Nginx 网关按路径分流，统一入口为 `20190601.xyz`：
 
 ```nginx
 upstream website {
@@ -75,7 +75,7 @@ upstream backend {
 
 server {
     listen 80;
-    server_name deepd.cturing.cn;
+    server_name 20190601.xyz;
 
     client_max_body_size 200m;
 

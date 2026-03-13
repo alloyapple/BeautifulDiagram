@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/Button';
 import { LocaleSwitcher } from './LocaleSwitcher';
 import { Menu, X, Github } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { APP_URL, SITE_CONFIG } from '@/lib/config';
 
 const navItems = [
   { href: '/features', key: 'features' },
@@ -48,11 +49,11 @@ export function Header() {
           {/* Desktop Actions */}
           <div className="hidden items-center gap-3 md:flex">
             <LocaleSwitcher />
-            <Button href="https://github.com/twwch/BeautifulDiagram" external variant="ghost" size="sm">
+            <Button href={SITE_CONFIG.github} external variant="ghost" size="sm">
               <Github className="h-4 w-4" />
               {tc('viewOnGitHub')}
             </Button>
-            <Button href="https://deepd.cturing.cn/app" external size="sm">
+            <Button href={APP_URL} external size="sm">
               {tc('tryItFree')}
             </Button>
           </div>
@@ -83,7 +84,7 @@ export function Header() {
             ))}
             <div className="mt-3 flex items-center gap-3 border-t border-gray-100 pt-3">
               <LocaleSwitcher />
-              <Button href="https://deepd.cturing.cn/app" external size="sm" className="flex-1">
+              <Button href={APP_URL} external size="sm" className="flex-1">
                 {tc('tryItFree')}
               </Button>
             </div>

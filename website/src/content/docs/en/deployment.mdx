@@ -10,8 +10,8 @@ BeautifulDiagram production environment consists of the following services:
 
 | Service | Tech Stack | Image |
 |---------|-----------|-------|
-| **Frontend** | React 19 + Nginx | `twwch/beautifuldiagram-frontend:latest` |
-| **Backend** | FastAPI + LangGraph | `twwch/beautifuldiagram-backend:latest` |
+| **Frontend** | React 19 + Nginx | `alloyapple/beautifuldiagram-frontend:latest` |
+| **Backend** | FastAPI + LangGraph | `alloyapple/beautifuldiagram-backend:latest` |
 | **Database** | PostgreSQL 16 | `postgres:16-alpine` |
 
 ## Docker Compose Deployment
@@ -42,7 +42,7 @@ services:
       - pgdata:/var/lib/postgresql/data
 
   backend:
-    image: twwch/beautifuldiagram-backend:latest
+    image: alloyapple/beautifuldiagram-backend:latest
     container_name: beautifuldiagram-backend
     restart: always
     depends_on:
@@ -58,7 +58,7 @@ services:
       - "8000:8000"
 
   frontend:
-    image: twwch/beautifuldiagram-frontend:latest
+    image: alloyapple/beautifuldiagram-frontend:latest
     container_name: beautifuldiagram-frontend
     restart: always
     depends_on:
@@ -188,7 +188,7 @@ docker compose up -d
 If you need a custom build:
 
 ```bash
-git clone https://github.com/twwch/BeautifulDiagram.git
+git clone https://github.com/alloyapple/BeautifulDiagram.git
 cd BeautifulDiagram
 docker compose up -d --build
 ```

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Section } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
 import { ArrowRight, Github } from 'lucide-react';
+import { APP_URL, SITE_CONFIG } from '@/lib/config';
 
 export function CTABanner() {
   const t = useTranslations('cta');
@@ -48,11 +49,11 @@ export function CTABanner() {
           {t('subtitle')}
         </p>
         <div className="relative mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button href="https://deepd.cturing.cn/app" external size="lg" className="border border-white/20 bg-white text-primary-700 shadow-lg shadow-blue-500/20 hover:bg-gray-100">
+          <Button href={APP_URL} external size="lg" className="border border-white/20 bg-white text-primary-700 shadow-lg shadow-blue-500/20 hover:bg-gray-100">
             {t('button')}
             <ArrowRight className="h-4 w-4" />
           </Button>
-          <Button href="https://github.com/twwch/BeautifulDiagram" external variant="secondary" size="lg" className="border border-white/10 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20">
+          <Button href={SITE_CONFIG.github} external variant="secondary" size="lg" className="border border-white/10 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20">
             <Github className="h-4 w-4" />
             GitHub
           </Button>

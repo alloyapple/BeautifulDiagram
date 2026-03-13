@@ -10,8 +10,8 @@ BeautifulDiagram 生产环境由以下服务组成：
 
 | 服务 | 技术栈 | 镜像 |
 |------|--------|------|
-| **前端** | React 19 + Nginx | `twwch/beautifuldiagram-frontend:latest` |
-| **后端** | FastAPI + LangGraph | `twwch/beautifuldiagram-backend:latest` |
+| **前端** | React 19 + Nginx | `alloyapple/beautifuldiagram-frontend:latest` |
+| **后端** | FastAPI + LangGraph | `alloyapple/beautifuldiagram-backend:latest` |
 | **数据库** | PostgreSQL 16 | `postgres:16-alpine` |
 
 ## Docker Compose 部署
@@ -42,7 +42,7 @@ services:
       - pgdata:/var/lib/postgresql/data
 
   backend:
-    image: twwch/beautifuldiagram-backend:latest
+    image: alloyapple/beautifuldiagram-backend:latest
     container_name: beautifuldiagram-backend
     restart: always
     depends_on:
@@ -58,7 +58,7 @@ services:
       - "8000:8000"
 
   frontend:
-    image: twwch/beautifuldiagram-frontend:latest
+    image: alloyapple/beautifuldiagram-frontend:latest
     container_name: beautifuldiagram-frontend
     restart: always
     depends_on:
@@ -188,7 +188,7 @@ docker compose up -d
 如果你需要自定义构建：
 
 ```bash
-git clone https://github.com/twwch/BeautifulDiagram.git
+git clone https://github.com/alloyapple/BeautifulDiagram.git
 cd BeautifulDiagram
 docker compose up -d --build
 ```

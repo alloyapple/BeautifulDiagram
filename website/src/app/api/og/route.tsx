@@ -109,7 +109,7 @@ export async function GET(request: NextRequest) {
             {date || 'beautifuldiagram.ai'}
           </span>
           <span style={{ fontSize: '20px', color: 'rgba(255,255,255,0.6)' }}>
-            cturing.cn
+            20190601.xyz
           </span>
         </div>
 

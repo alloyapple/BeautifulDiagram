@@ -3,7 +3,6 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Section } from '@/components/ui/Section';
-import { Section } from '@/components/ui/Section';
 import { Star } from 'lucide-react';
 
 export function OpenSource() {

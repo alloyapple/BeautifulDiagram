@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/Button';
 import { Check, Github } from 'lucide-react';
 import { createMetadata } from '@/lib/seo/metadata';
+import { SITE_CONFIG } from '@/lib/config';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -44,7 +45,7 @@ function PricingContent() {
             <div className="mt-6">
               <span className="text-4xl font-bold text-gray-900">{t('free.price')}</span>
             </div>
-            <Button href="https://github.com/twwch/BeautifulDiagram" external size="lg" className="mt-6 w-full">
+            <Button href={SITE_CONFIG.github} external size="lg" className="mt-6 w-full">
               <Github className="h-4 w-4" />
               {t('free.name')}
             </Button>

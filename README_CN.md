@@ -349,7 +349,7 @@ MODEL_ID=your-model-name
 
 ## ⭐ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=twwch/BeautifulDiagram&type=date&legend=top-left)](https://www.star-history.com/#twwch/BeautifulDiagram&type=date&legend=top-left)
+[![Star History Chart](https://api.star-history.com/svg?repos=alloyapple/BeautifulDiagram&type=date&legend=top-left)](https://www.star-history.com/#alloyapple/BeautifulDiagram&type=date&legend=top-left)
 
 ---
 
@@ -367,8 +367,8 @@ MODEL_ID=your-model-name
 
 ## 📞 支持与社区
 
-- **问题反馈**: [GitHub Issues](https://github.com/twwch/BeautifulDiagram/issues)
-- **讨论交流**: [GitHub Discussions](https://github.com/twwch/BeautifulDiagram/discussions)
+- **问题反馈**: [GitHub Issues](https://github.com/alloyapple/BeautifulDiagram/issues)
+- **讨论交流**: [GitHub Discussions](https://github.com/alloyapple/BeautifulDiagram/discussions)
 - **在线体验**: [https://20190601.xyz/](https://20190601.xyz/)
 
 Made with ❤️ by the BeautifulDiagram Team

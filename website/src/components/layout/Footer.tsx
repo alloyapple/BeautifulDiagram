@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/lib/i18n/navigation';
 import { Container } from '@/components/ui/Container';
 import { Github } from 'lucide-react';
+import { SITE_CONFIG } from '@/lib/config';
 
 export function Footer() {
   const t = useTranslations('footer');
@@ -36,7 +37,7 @@ export function Footer() {
               {t('description')}
             </p>
             <a
-              href="https://github.com/twwch/BeautifulDiagram"
+              href={SITE_CONFIG.github}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 inline-flex items-center gap-2 text-sm text-gray-500 hover:text-gray-700"
