@@ -963,15 +963,6 @@ export const ChatPanel = () => {
                         <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                             BeautifulDiagram AI
                         </h1>
-                        <a
-                            href="https://github.com/twwch/BeautifulDiagram"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-1 rounded-full hover:bg-slate-100 text-slate-950 transition-colors"
-                            title="View on GitHub"
-                        >
-                            <Github className="w-5 h-5 fill-current" />
-                        </a>
                     </div>
                     <p className="text-xs text-slate-500 mt-1">Describe what you want to create or upload an image.</p>
                 </div>
