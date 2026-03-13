@@ -100,3 +100,7 @@ cd backend && alembic upgrade head
 - License: AGPL-3.0 (network use = distribution)
 - Demo: https://20190601.xyz/
 - Uses OpenAI-compatible APIs (OpenAI, DeepSeek, custom)
+
+## DEPLOYMENT
+
+- **Ubuntu 18.04 (glibc 2.27)** requires Docker — Node.js 18+ and Python 3.13 packages need glibc 2.28+. Old kernels cause segfaults in rustup, uv venv, and source compilation of pymupdf.

@@ -9,20 +9,12 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres_password
       POSTGRES_DB: beautifuldiagram
-    ports:
-      - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
 
   backend:
+    image: beautifuldiagram-backend:latest
     container_name: beautifuldiagram-backend
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-      args:
-        HTTP_PROXY: http://localhost:2080
-        HTTPS_PROXY: http://localhost:2080
-      network: host
     restart: always
     depends_on:
       - db
@@ -38,29 +30,17 @@ services:
       - "8000:8000"
 
   frontend:
+    image: beautifuldiagram-frontend:latest
     container_name: beautifuldiagram-frontend
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-      args:
-        HTTP_PROXY: http://localhost:2080
-        HTTPS_PROXY: http://localhost:2080
-      network: host
     restart: always
     depends_on:
       - backend
     ports:
-      - "80:80"
+      - "8888:80"
 
   website:
+    image: beautifuldiagram-website:latest
     container_name: beautifuldiagram-website
-    build:
-      context: ./website
-      dockerfile: Dockerfile
-      args:
-        HTTP_PROXY: http://localhost:2080
-        HTTPS_PROXY: http://localhost:2080
-      network: host
     restart: always
     ports:
       - "3000:3000"
