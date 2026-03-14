@@ -5,8 +5,9 @@ import { HowItWorks } from '@/components/home/HowItWorks';
 import { OpenSource } from '@/components/home/OpenSource';
 import { CTABanner } from '@/components/home/CTABanner';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { websiteJsonLd, organizationJsonLd, softwareJsonLd, faqJsonLd } from '@/lib/seo/jsonld';
+import { websiteJsonLd, organizationJsonLd, softwareJsonLd, faqJsonLd, videoJsonLd } from '@/lib/seo/jsonld';
 import { createMetadata } from '@/lib/seo/metadata';
+import { SITE_URL } from '@/lib/config';
 
 const SEO_CONTENT = {
   zh: {
@@ -28,6 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: content.title, 
     description: content.description,
     locale,
+    keywords: content.keywords,
   });
 }
 
@@ -35,12 +37,22 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const demoVideoJsonLd = videoJsonLd({
+    name: locale === 'zh' ? 'BeautifulDiagram AI 演示' : 'BeautifulDiagram AI Demo',
+    description: locale === 'zh' 
+      ? '观看 BeautifulDiagram AI 如何用自然语言生成思维导图、流程图、数据图表等专业图表'
+      : 'Watch how BeautifulDiagram AI generates mind maps, flowcharts, data charts and more with natural language',
+    thumbnailUrl: `${SITE_URL}/images/demo-thumbnail.png`,
+    contentUrl: `${SITE_URL}/images/demo.mp4`,
+  });
+
   return (
     <>
       <JsonLd data={websiteJsonLd()} />
       <JsonLd data={organizationJsonLd()} />
       <JsonLd data={softwareJsonLd()} />
       <JsonLd data={faqJsonLd(locale)} />
+      <JsonLd data={demoVideoJsonLd} />
       <Hero />
       <FeatureGrid />
       <HowItWorks />

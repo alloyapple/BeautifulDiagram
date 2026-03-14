@@ -110,5 +110,31 @@
   "changelog": {
     "title": "Changelog",
     "subtitle": "Version history of BeautifulDiagram"
+  },
+  "tools": {
+    "mindmap": {
+      "title": "AI Mind Map Generator",
+      "subtitle": "Create professional mind maps with natural language. Perfect for brainstorming, knowledge organization, and project planning."
+    },
+    "flowchart": {
+      "title": "AI Flowchart Generator",
+      "subtitle": "Design business processes and workflows with AI. Automatic step detection and professional diagram generation."
+    },
+    "charts": {
+      "title": "AI Data Chart Generator",
+      "subtitle": "Transform Excel data into beautiful visualizations. 20+ chart types with intelligent recommendations."
+    },
+    "architecture": {
+      "title": "AI Architecture Diagram Generator",
+      "subtitle": "Design cloud and system architectures with AI. AWS, Azure, GCP icons included."
+    },
+    "mermaid": {
+      "title": "AI Mermaid Diagram Generator",
+      "subtitle": "Generate Mermaid syntax diagrams with natural language. Sequence, Gantt, class diagrams and more."
+    },
+    "infographic": {
+      "title": "AI Infographic Generator",
+      "subtitle": "Transform data into beautiful infographics. 50+ templates with smart layout selection."
+    }
   }
 }

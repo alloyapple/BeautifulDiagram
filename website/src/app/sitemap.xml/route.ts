@@ -18,6 +18,7 @@ function generateHreflangAlternates(path: string): string {
 export function GET() {
   const locales = SITE_CONFIG.locales;
   const staticPages = ['', '/features', '/pricing', '/about', '/blog', '/docs', '/changelog'];
+  const toolPages = ['/mindmap', '/flowchart', '/charts', '/architecture', '/mermaid', '/infographic'];
 
   const urls: string[] = [];
 
@@ -32,6 +33,20 @@ export function GET() {
     <lastmod>${formatDate(new Date())}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${priority}</priority>
+${hreflangs}
+  </url>`);
+    }
+  }
+
+  for (const locale of locales) {
+    for (const page of toolPages) {
+      const loc = `${SITE_URL}/${locale}${page}`;
+      const hreflangs = generateHreflangAlternates(page);
+      urls.push(`  <url>
+    <loc>${escapeXml(loc)}</loc>
+    <lastmod>${formatDate(new Date())}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
 ${hreflangs}
   </url>`);
     }

@@ -110,5 +110,31 @@
   "changelog": {
     "title": "更新日志",
     "subtitle": "BeautifulDiagram 的版本更新记录"
+  },
+  "tools": {
+    "mindmap": {
+      "title": "AI思维导图生成器",
+      "subtitle": "用自然语言创建专业思维导图。适合头脑风暴、知识整理、项目规划。"
+    },
+    "flowchart": {
+      "title": "AI流程图生成器",
+      "subtitle": "用AI设计业务流程和工作流。自动识别步骤，生成专业图表。"
+    },
+    "charts": {
+      "title": "AI数据图表生成器",
+      "subtitle": "将Excel数据转化为精美可视化。20+图表类型，智能推荐。"
+    },
+    "architecture": {
+      "title": "AI架构图生成器",
+      "subtitle": "用AI设计云架构和系统架构。支持AWS、Azure、GCP图标。"
+    },
+    "mermaid": {
+      "title": "AI Mermaid图表生成器",
+      "subtitle": "用自然语言生成Mermaid语法图表。时序图、甘特图、类图等。"
+    },
+    "infographic": {
+      "title": "AI信息图生成器",
+      "subtitle": "将数据转化为精美信息图。50+模板，智能布局选择。"
+    }
   }
 }
