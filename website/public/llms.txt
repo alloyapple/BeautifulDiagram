@@ -1,0 +1,40 @@
+# BeautifulDiagram AI
+
+> AI-powered intelligent visualization platform. Generate professional diagrams with natural language.
+
+## What is BeautifulDiagram?
+
+BeautifulDiagram is an open-source AI visualization platform that transforms natural language and multimodal inputs into professional diagrams. It uses a LangGraph-powered multi-agent architecture with 6 specialized agents:
+
+- **Mind Map Agent**: Generates structured, interactive mind maps
+- **Flowchart Agent**: Creates business process flows with React Flow
+- **Data Chart Agent**: Visualizes data with ECharts (20+ chart types)
+- **Architecture Agent**: Produces cloud architecture diagrams with Draw.io
+- **Mermaid Agent**: Generates technical diagrams (sequence, Gantt, class, etc.)
+- **Infographic Agent**: Creates visual infographics with AntV
+
+## Key Features
+
+- Natural language input for diagram generation
+- Multimodal support (upload images, PDFs, DOCX, XLSX, PPTX)
+- Real-time streaming with design concept visibility
+- Message branching and version history
+- Export to PNG/SVG
+- Docker deployment ready
+
+## Technology Stack
+
+- Frontend: React 19, TypeScript, TailwindCSS 4.1, Zustand
+- Backend: Python 3.13, FastAPI, LangGraph, SQLModel
+- Database: PostgreSQL 16
+- Deployment: Docker, Nginx
+
+## URLs
+
+- Website: https://20190601.xyz/
+- App: https://20190601.xyz/app
+- GitHub: https://github.com/alloyapple/BeautifulDiagram
+
+## License
+
+AGPL-3.0 (network use = distribution)
