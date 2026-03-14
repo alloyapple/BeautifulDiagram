@@ -1,6 +1,97 @@
 import type { BlogPost } from '../mdx/types';
 import { SITE_URL, SITE_CONFIG } from '@/lib/config';
 
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+export function breadcrumbJsonLd(items: BreadcrumbItem[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
+export function articleJsonLd(post: BlogPost) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.frontmatter.title,
+    description: post.frontmatter.description,
+    image: post.frontmatter.image ? [post.frontmatter.image] : undefined,
+    datePublished: post.frontmatter.date,
+    dateModified: post.frontmatter.date,
+    author: {
+      '@type': 'Person',
+      name: post.frontmatter.author || 'BeautifulDiagram Team',
+      url: SITE_URL,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_CONFIG.name,
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo.png` },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${SITE_URL}/${post.locale}/blog/${post.slug}`,
+    },
+    inLanguage: post.locale === 'zh' ? 'zh-CN' : 'en',
+    articleSection: post.frontmatter.category,
+    keywords: post.frontmatter.tags?.join(', '),
+  };
+}
+
+export function videoJsonLd(video: {
+  name: string;
+  description: string;
+  thumbnailUrl: string;
+  contentUrl: string;
+  duration?: string;
+  uploadDate?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: video.name,
+    description: video.description,
+    thumbnailUrl: video.thumbnailUrl,
+    contentUrl: video.contentUrl,
+    duration: video.duration,
+    uploadDate: video.uploadDate || new Date().toISOString(),
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_CONFIG.name,
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo.png` },
+    },
+  };
+}
+
+export function howToJsonLd(howTo: {
+  name: string;
+  description: string;
+  steps: { name: string; text: string }[];
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: howTo.name,
+    description: howTo.description,
+    step: howTo.steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+    })),
+  };
+}
+
 export function websiteJsonLd() {
   return {
     '@context': 'https://schema.org',

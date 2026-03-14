@@ -5,10 +5,11 @@ import { Container } from '@/components/ui/Container';
 import { Badge } from '@/components/ui/Badge';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getAllPosts, getPostBySlug, getFirstContentImage } from '@/lib/mdx/content';
-import { blogPostJsonLd } from '@/lib/seo/jsonld';
+import { blogPostJsonLd, articleJsonLd, breadcrumbJsonLd } from '@/lib/seo/jsonld';
 import { createMetadata } from '@/lib/seo/metadata';
 import { formatDate } from '@/lib/utils';
 import { locales } from '@/lib/i18n/config';
+import { SITE_URL } from '@/lib/config';
 import { ArrowLeft, Clock } from 'lucide-react';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
@@ -47,9 +48,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
   const post = getPostBySlug(slug, locale);
   if (!post) notFound();
 
+  const breadcrumbs = breadcrumbJsonLd([
+    { name: locale === 'zh' ? '首页' : 'Home', url: `${SITE_URL}/${locale}` },
+    { name: locale === 'zh' ? '博客' : 'Blog', url: `${SITE_URL}/${locale}/blog` },
+    { name: post.frontmatter.title, url: `${SITE_URL}/${locale}/blog/${slug}` },
+  ]);
+
   return (
     <>
+      <JsonLd data={breadcrumbs} />
       <JsonLd data={blogPostJsonLd(post)} />
+      <JsonLd data={articleJsonLd(post)} />
       <article>
         {/* Hero header */}
         <div className="border-b border-gray-100 bg-gradient-to-b from-primary-50/40 to-white pb-12 pt-16 sm:pb-16 sm:pt-20">

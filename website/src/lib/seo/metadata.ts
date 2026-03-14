@@ -11,6 +11,9 @@ export function createMetadata({
   image,
   category,
   date,
+  keywords,
+  author,
+  noindex = false,
 }: {
   title: string;
   description: string;
@@ -19,6 +22,9 @@ export function createMetadata({
   image?: string;
   category?: string;
   date?: string;
+  keywords?: string[];
+  author?: string;
+  noindex?: boolean;
 }): Metadata {
   const url = `${SITE_URL}/${locale}${path}`;
   const ogParams = new URLSearchParams({ title, locale });
@@ -30,6 +36,9 @@ export function createMetadata({
   return {
     title: fullTitle,
     description,
+    keywords: keywords?.join(', '),
+    authors: author ? [{ name: author }] : undefined,
+    robots: noindex ? { index: false, follow: false } : { index: true, follow: true },
     alternates: {
       canonical: url,
       languages: {
@@ -42,7 +51,7 @@ export function createMetadata({
       description,
       url,
       siteName: SITE_NAME,
-      images: [{ url: ogImage, width: 1200, height: 630 }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
       locale: locale === 'zh' ? 'zh_CN' : 'en_US',
       type: 'website',
     },
@@ -51,6 +60,7 @@ export function createMetadata({
       title: fullTitle,
       description,
       images: [ogImage],
+      site: SITE_CONFIG.twitter,
     },
   };
 }

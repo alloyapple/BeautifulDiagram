@@ -4,6 +4,7 @@ import { formatDate } from '@/lib/utils';
 import { Clock, ArrowRight } from 'lucide-react';
 import { getFirstContentImage } from '@/lib/mdx/content';
 import type { BlogPost } from '@/lib/mdx/types';
+import Image from 'next/image';
 
 interface BlogCardProps {
   post: BlogPost;
@@ -19,12 +20,12 @@ export function BlogCard({ post }: BlogCardProps) {
         {/* Cover */}
         <div className="relative aspect-[16/9] overflow-hidden bg-gradient-to-br from-primary-50 via-white to-primary-100">
           {coverImage ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
+            <Image
               src={coverImage}
               alt={frontmatter.title}
-              loading="lazy"
-              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
             />
           ) : (
             <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950 p-8">

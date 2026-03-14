@@ -11,6 +11,13 @@ const nextConfig: NextConfig = {
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
   images: {
     formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'ladr-1258957911.cos.ap-guangzhou.myqcloud.com' },
+      { protocol: 'https', hostname: '**.myqcloud.com' },
+    ],
+  },
+  experimental: {
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
 };
 
